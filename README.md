@@ -1,3 +1,3 @@
 # Creators Space
 
-Bring creative people together
+Bringing creative people together
