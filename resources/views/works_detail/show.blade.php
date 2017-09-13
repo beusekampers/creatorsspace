@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<a>
     <h1>{{ $works->title }}</h1>
     <p>{{ $works->description }}</p>
+
+    <a href="/">Terug</a>
 </body>
 </html>

@@ -19,7 +19,7 @@ class CreateWorkFromUsersTable extends Migration
             $table->integer('like');
             $table->string('title', 150);
             $table->text('description');
-            $table->integer('active');
+            $table->integer('active')->default(1);
             $table->string('category', 100);
             $table->string('tag', 100);
             $table->timestamps();

@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-//    return view('welcome');
 
-    $works = DB::table('work_from_users')->get();
+//    $works = DB::table('work_from_users')->get();
+    $works = App\WorkFromUser::all();
 
     return view('welcome', compact('works'));
 });
@@ -22,10 +22,8 @@ Route::get('/', function () {
 
 Route::get('/work_detail/{id}', function($id){
 
-    $works = DB::table('work_from_users')->find($id);
+//    $works = DB::table('work_from_users')->find($id);
+    $works = App\WorkFromUser::find($id);
     return view('works_detail.show', compact('works'));
 
-//    $work = DB::table('work_from_users')->find($user_id);
-//
-//    dd($work);
 });
