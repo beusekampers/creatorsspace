@@ -8,12 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach($works as $work)
-
-        <a href="/work_detail/{{ $work->id }}">
-            {{ $work->title }}
-        </a>
-
-    @endforeach
+    <h1>{{ $works->title }}</h1>
+    <p>{{ $works->description }}</p>
 </body>
 </html>

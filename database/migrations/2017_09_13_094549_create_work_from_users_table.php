@@ -17,6 +17,7 @@ class CreateWorkFromUsersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('like');
+            $table->string('title', 150);
             $table->text('description');
             $table->integer('active');
             $table->string('category', 100);
