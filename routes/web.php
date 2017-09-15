@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'WorkController@index');
+Route::get('/', 'PostsController@index');
 
-Route::get('/work_detail/{id}', 'WorkController@show');
+Route::get('/posts_detail/{post}', 'PostsController@show');

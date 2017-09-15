@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WorkFromUser extends Model
+class PostsFromUser extends Model
 {
 
 }
