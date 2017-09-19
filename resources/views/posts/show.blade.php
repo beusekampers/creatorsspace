@@ -1,7 +1,10 @@
+@extends('layouts.master')
+@section('title', 'Detail Page')
 
+@section('content')
+    <h1>{{ $post->title }}</h1>
+    <p>{{ $post->description }}</p>
 
-    @foreach($posts as $post)
-        <a href="/posts_detail/{{ $post->id }}">
-            {{ $post->title }}
-        </a>
-    @endforeach
+    <a href="/">Terug</a>
+
+@endsection

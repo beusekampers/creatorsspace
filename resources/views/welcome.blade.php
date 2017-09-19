@@ -1,7 +1,7 @@
-    @include('partials.headernav')
+    @extends('layouts.master')
 
+    @section('content')
     <div class="container">
         @include('partials.post')
     </div>
-
-    @include('partials.footer')
+    @endsection

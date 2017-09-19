@@ -15,8 +15,13 @@ class PostsController extends Controller
         return view('welcome', compact('posts'));
     }
 
-    public function show(PostsFromUser $post){ // Elequent to -> $posts = WorkFromUser::find($id) <- wildcard;
+    public function show(PostsFromUser $post){ // Elequent to -> $posts = PostsFromUser::find($id) <- wildcard;
 
-        return view('posts_detail.show', compact('post'));
+        return view('posts.show', compact('post'));
+    }
+
+    public function create()
+    {
+        return view('posts.create');
     }
 }
