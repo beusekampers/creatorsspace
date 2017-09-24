@@ -14,25 +14,17 @@
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" name="title">
             </div>
+
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea name="description" id="description" class="form-control"></textarea>
             </div>
-            <div class="form-group">
-                <label for="user_id">Id</label>
-                <input type="number" class="form-control" id="user_id" name="user_id"/>
-            </div>
-            <div class="form-group">
-                <label for="like">like</label>
-                <input type="number" class="form-control" id="like" name="like"/>
-            </div>
+
+            <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
+
             <div class="form-group">
                 <label for="category">Category</label>
                 <input type="text" class="form-control" id="category" name="category"/>
-            </div>
-            <div class="form-group">
-                <label for="category">Tag</label>
-                <input type="tag" class="form-control" id="tag" name="tag"/>
             </div>
             {{-- <div class="form-group">
                 <label for="exampleInputFile">File input</label>

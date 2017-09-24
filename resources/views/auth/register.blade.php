@@ -52,20 +52,6 @@
                                 @endif
                             </div>
                         </div>
-                        {{-- File upload --}}
-                        <div class="form-group{{ $errors->has('profile_picture') ? ' has-error ' : '' }}">
-                            <label for="profile_picture" class="col-md-4 control-label">Profile picture</label>
-
-                            <div class="col-md-6">
-                                <input id="profile_picture" type="file" class="form-control" name="profile_picture" required>
-
-                                @if ($errors->has('profile_picture'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('profile_picture') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

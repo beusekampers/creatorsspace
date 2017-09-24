@@ -2,6 +2,10 @@
 
     @section('content')
     <div class="container">
-        @include('partials.post')
+        {{-- @include('partials.post') --}}
+        @foreach ($posts as $post)
+            {{ $post->title }}
+        @endforeach
+
     </div>
     @endsection

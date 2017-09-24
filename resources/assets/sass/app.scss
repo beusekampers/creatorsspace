@@ -12,5 +12,11 @@
 @import "partials/footer";
 @import "partials/postItem";
 
+// Templates
+@import "profile";
+
+// Master layout styling
+@import "master";
+
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";

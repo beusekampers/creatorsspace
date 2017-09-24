@@ -8,11 +8,11 @@
 
     <link rel="stylesheet" href="/css/app.css" >
     {{-- Bootstrap CSS --}}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,8 +29,63 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
-    </nav>
-        
+    </nav> --}}
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
+                                    <div class="avatar">
+                                        <img src="/uploads/avatars/{{ Auth::user()->profile_picture }}" alt="Profile" />
+                                    </div>
+                                    <span class="glyphicon glyphicon-chevron-down arrow"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('profile') }}">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('posts/create') }}">
+                                            Upload
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="container">
             @yield('content')
         </div>

@@ -19,7 +19,9 @@ Route::get('posts/create', 'PostsController@create');
 
 Route::post('/posts', 'PostsController@store');
 
-Route::post('upload', 'UploadController@upload');
+// Profile route and avatar update controller
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar');
 
 Auth::routes();
 

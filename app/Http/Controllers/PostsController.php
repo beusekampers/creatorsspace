@@ -35,8 +35,6 @@ class PostsController extends Controller
         Post::create([
             'title' => request('title'),
             'user_id' => request('user_id'),
-            'like' => request('like'),
-            'tag' => request('tag'),
             'category' => request('category'),
             'description' => request('description')
         ]);
