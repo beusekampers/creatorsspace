@@ -8,6 +8,9 @@
                         <p class="card-text">
                             {{ $post->title }}
                         </p>
+                        <span class="description">
+                            {{ $post->description }}
+                        </span>
                     </a>
                 </div>
             @endforeach

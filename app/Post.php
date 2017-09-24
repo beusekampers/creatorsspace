@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostsFromUser extends Model
+class Post extends Model
 {
-
+    protected $guarded = [];
 }

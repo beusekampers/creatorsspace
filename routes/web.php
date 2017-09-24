@@ -16,3 +16,11 @@ Route::get('/', 'PostsController@index');
 Route::get('/posts_detail/{post}', 'PostsController@show');
 
 Route::get('posts/create', 'PostsController@create');
+
+Route::post('/posts', 'PostsController@store');
+
+Route::post('upload', 'UploadController@upload');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
