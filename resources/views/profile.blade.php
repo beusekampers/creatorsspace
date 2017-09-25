@@ -11,17 +11,17 @@
 
             <div class="col-md-12 profile">
                 <div class="profile-image clearfix">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="image">
                             <img src="/uploads/avatars/{{ Auth::user()->profile_picture }}"/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <form action="/profile" enctype="multipart/form-data" method="POST">
+                    <div class="col-md-12">
+                        <form action="/profile" class="clearfix" enctype="multipart/form-data" method="POST">
                             {{ csrf_field() }}
 
-                            <input type="file" name="profile_picture" class="btn btn-default btn-lg btn-file"/>
-                            <input type="submit" class="btn btn-outline-primary btn-lg"/>
+                            <input type="file" name="profile_picture" class="btn btn-default btn-file"/>
+                            <input type="submit" class="btn btn-primary"/>
                         </form>
                     </div>
                 </div> 

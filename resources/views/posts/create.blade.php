@@ -20,11 +20,13 @@
                 <textarea name="description" id="description" class="form-control"></textarea>
             </div>
 
-            <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
-
             <div class="form-group">
                 <label for="category">Category</label>
                 <input type="text" class="form-control" id="category" name="category"/>
+                {{-- <select>
+                    <option value="">Test</option>
+                </select> --}}
+
             </div>
             {{-- <div class="form-group">
                 <label for="exampleInputFile">File input</label>

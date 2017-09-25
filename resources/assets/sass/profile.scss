@@ -5,10 +5,9 @@
 
         .image{
             display: block;
-            float: right;
+            margin: 0 auto;
             width: 200px;
             height: 200px;
-            margin-right: 20px;
 
             img{
                 width: 100%;
@@ -19,7 +18,12 @@
 
         form{
             display: block;
-            float: left;
+            margin: 20px auto;
+            width: 362px;
+
+            input{
+                float: left;
+            }
         }
     }
 

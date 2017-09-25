@@ -30,7 +30,7 @@
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav> --}}
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <!-- Branding Image -->
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container content">
             @yield('content')
         </div>
         
