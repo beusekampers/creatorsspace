@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id');
             $table->string('title', 150);
             $table->text('description');
+            $table->string('post_image');
             $table->integer('active')->default(1);
             $table->string('category', 100);
             $table->timestamps();

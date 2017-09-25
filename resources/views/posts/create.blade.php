@@ -8,7 +8,7 @@
 
         <hr>
 
-        <form method="POST" action="/posts">
+        <form method="POST" action="/posts" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -28,11 +28,12 @@
                 </select> --}}
 
             </div>
-            {{-- <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <input type="file" id="exampleInputFile">
-                <p class="help-block">Example block-level help text here.</p>
-            </div> --}}
+
+            <div class="form-group">
+                <label for="post_image">Artwork</label>
+                <input type="file" name="post_image" class="btn btn-default btn-file"/>
+            </div>
+
             <button type="submit" class="btn btn-primary">Publish</button>
         </form>
     </div>
