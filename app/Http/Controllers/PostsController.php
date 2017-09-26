@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Post;
 use Image;
+use App\Category;
 
 class PostsController extends Controller
 {
@@ -25,7 +26,8 @@ class PostsController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -42,14 +44,16 @@ class PostsController extends Controller
 
         $post->title = request('title');
         $post->user_id = Auth::user()->id;
-        $post->category = request('category');
+        $post->category_id = request('category_id');
         $post->post_image = $filename;
         $post->description = request('description');
         
         // Save it to the database
         $post->save();
 
+        $request->session()->flash('flash_message', 'Yeah it worked!');
+
         // Redirect to the homepage
-        return redirect('/');
+        return redirect('profile');
     }
 }

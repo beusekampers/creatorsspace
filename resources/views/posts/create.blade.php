@@ -21,11 +21,12 @@
             </div>
 
             <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" id="category" name="category"/>
-                {{-- <select>
-                    <option value="">Test</option>
-                </select> --}}
+                <label for="category_id">Category</label>
+                <select name="category_id" id="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
 
             </div>
 

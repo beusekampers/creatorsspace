@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+            {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
@@ -20,9 +21,12 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->string('post_image');
             $table->integer('active')->default(1);
-            $table->string('category', 100);
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('posts');
             $table->timestamps();
         });
+    }
+
     }
 
     /**
@@ -35,4 +39,3 @@ class CreatePostsTable extends Migration
         Schema::dropIfExists('posts');
     }
 }
-

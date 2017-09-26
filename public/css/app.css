@@ -67,6 +67,7 @@ footer:before {
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #fff;
 }
 
 .album .card img {
@@ -118,6 +119,14 @@ footer:before {
 
 .profile .profile-image form input {
   float: left;
+}
+
+.profile .upload {
+  margin-top: 30px;
+}
+
+.profile .upload img {
+  width: 50px;
 }
 
 .container.content {

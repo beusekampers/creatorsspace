@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Image;
+use App\Post;
 
 class UserController extends Controller
 {
@@ -38,6 +39,9 @@ class UserController extends Controller
     public function index()
     {
         // Get the users posts
+        $posts = Post::all();
+
+        return view('profile', compact('posts'));
     }
 
     /**

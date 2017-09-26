@@ -5,7 +5,7 @@
     <div class="wrapper detail clearfix">
         <div class="col-md-6">
             <div class="post-image">
-                <img src="https://www.tourmyindia.com/states/jammu-kashmir/images/magnificent1.jpg" alt="" class=""/>
+                <img src="/uploads/posts/{{ $post->post_image }}" alt="" class=""/>
             </div>
         </div>
         <div class="col-md-6">
