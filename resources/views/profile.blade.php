@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Profile')
 
 @section('content')
     @if(Session::has('flash_message'))
@@ -57,32 +58,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($posts as $post)
-                                        @if ($post->user_id == Auth::user()->id)
-                                            <tr>
-                                                <td>
-                                                    #
-                                                </td>
-                                                <td>
-                                                    {{ $post->title }}
-                                                </td>
-                                                <td>
-                                                    {{ $post->description }}
-                                                </td>
-                                                <td>
-                                                    <img src="/uploads/posts/{{ $post->post_image }}" alt="{{ $post->name }}"/>
-                                                </td>
-                                                <td>
-                                                    {{-- {{ $post->category }} --}}
-                                                </td>
-                                                <td>
-                                                    <a href="#">
-                                                        Edit post
-                                                    </a> 
-                                                </td>
-                                            </tr>
-                                        @endif
-                                    @endforeach
+                                    @if ($posts)
+                                        @foreach ($posts as $post)
+                                            @if ($post->user_id == Auth::user()->id)
+                                                <tr>
+                                                    <td>
+                                                        #
+                                                    </td>
+                                                    <td>
+                                                        {{ $post->title }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $post->description }}
+                                                    </td>
+                                                    <td>
+                                                        <img src="/uploads/posts/{{ $post->post_image }}" alt="{{ $post->name }}"/>
+                                                    </td>
+                                                    <td>
+                                                        {{ $post->category->name }}
+                                                    </td>
+                                                    <td>
+                                                        <a href="#">
+                                                            Edit post
+                                                        </a> 
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
