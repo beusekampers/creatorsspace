@@ -71,11 +71,19 @@
         <div class="container content">
             @yield('content')
         </div>
-        
+        @guest
+        @else
+        <div class="upload-btn">
+            <a href="{{ url('posts/create') }}">
+
+            </a>
+        </div>
+        @endguest
+
         <footer class="text-muted">
             <div class="container">
                 <p class="float-right">
-                <a href="#">Back to top</a>
+                    <a href="#">Back to top</a>
                 </p>
                 <p>&copy; 2017</p>
             </div>

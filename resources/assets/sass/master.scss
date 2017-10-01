@@ -10,3 +10,33 @@
     box-sizing: border-box;
     background-color: $grey-bg;
 }
+
+.upload-btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #446CB3;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+
+    a{
+        display: block;
+        width: inherit;
+        height: inherit;
+        color: #fff;
+        font-size: 50px;
+        line-height: 40px;
+        padding-left: 10px;
+
+        &:hover{
+            color: #DADFE1;
+            text-decoration: none;
+        }
+
+        &:before{
+            content: "+";
+            display: block;
+        }
+    }
+}
