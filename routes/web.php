@@ -19,6 +19,12 @@ Route::get('posts/create', 'PostsController@create');
 Route::get('posts/edit/{post}', 'PostsController@edit');
 Route::post('posts/edit/{post}', 'PostsController@update');
 
+Route::get('/delete-post/{post}', [
+    'uses' => 'PostsController@delete',
+    'as' => 'posts.delete',
+    'middelware' => 'auth'
+]);
+
 Route::post('/posts', 'PostsController@store');
 
 // Profile route and avatar update controller

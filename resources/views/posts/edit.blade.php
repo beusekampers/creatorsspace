@@ -14,12 +14,12 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" placeholder="{{ $post->title }}" class="form-control" id="title" name="title">
+                <input type="text" value="{{ $post->title }}" class="form-control" id="title" name="title">
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" placeholder="{{ $post->description }}" id="description" class="form-control"></textarea>
+                <textarea name="description" id="description" class="form-control">{{ $post->description }}</textarea>
             </div>
 
             <div class="form-group">

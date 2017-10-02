@@ -39,16 +39,16 @@ class PostsController extends Controller
 
     public function update(Request $request , Post $post)
     {
-        //Find the user object from model if it exists
+        // Get the right post from the Post Model
         $post = Post::find($post->id);
 
-        //Set user object attributes
+        //Set post object attributes
         $post->title = request('title');
         $post->user_id = Auth::user()->id;
         $post->category_id = request('category_id');
         $post->description = request('description');
 
-        // This will will update your the row in ur db.
+        // Update the post
         $post->save();
 
         $request->session()->flash('flash_message', 'Yeah your post is updated');
@@ -80,6 +80,17 @@ class PostsController extends Controller
         $request->session()->flash('flash_message', 'Yeah it worked!');
 
         // Redirect to the homepage
+        return redirect('profile');
+    }
+
+    public function delete(Request $request,Post $post){
+
+        $post = Post::find($post->id);
+
+        $post->delete();
+
+        $request->session()->flash('flash_message', 'Yeah your post is deleted');
+
         return redirect('profile');
     }
 }

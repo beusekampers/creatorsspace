@@ -55,6 +55,7 @@
                                         <th>Post image</th>
                                         <th>Category</th>
                                         <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,6 +82,11 @@
                                                         <a href="/posts/edit/{{ $post->id }}">
                                                             Edit post
                                                         </a> 
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ route('posts.delete', ['post_id' => $post->id]) }}">
+                                                            Delete
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endif
