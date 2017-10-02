@@ -15,9 +15,9 @@ Route::get('/', 'PostsController@index');
 
 Route::get('/posts_detail/{post}', 'PostsController@show');
 
-Route::get('posts/create', 'PostsController@create');
-Route::get('posts/edit/{post}', 'PostsController@edit');
-Route::post('posts/edit/{post}', 'PostsController@update');
+Route::get('posts/create', 'PostsController@create')->middleware('auth');
+Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');
+Route::post('posts/edit/{post}', 'PostsController@update')->middleware('auth');
 
 Route::get('/delete-post/{post}', [
     'uses' => 'PostsController@delete',
@@ -28,9 +28,9 @@ Route::get('/delete-post/{post}', [
 Route::post('/posts', 'PostsController@store');
 
 // Profile route and avatar update controller
-Route::get('profile', 'UserController@profile');
-Route::post('profile', 'UserController@update_avatar');
-Route::get('profile', 'UserController@index');
+Route::get('profile', 'UserController@profile')->middleware('auth');
+Route::post('profile', 'UserController@update_avatar')->middleware('auth');
+Route::get('profile', 'UserController@index')->middleware('auth');
 
 Auth::routes();
 

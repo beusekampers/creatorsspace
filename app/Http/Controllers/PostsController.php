@@ -58,7 +58,6 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-        // dd(request()->all());, dd(request(['title', 'body'])) -> Laat een array zien met de ingevulde data
         if($request->hasFile('post_image')){
     		$post_image = $request->file('post_image');
     		$filename = time() . '.' . $post_image->getClientOriginalExtension();
