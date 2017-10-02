@@ -27,7 +27,33 @@ class PostsController extends Controller
     public function create()
     {
         $categories = Category::all();
+        
         return view('posts.create', compact('categories'));
+    }
+
+    public function edit(Post $post){
+        $categories = Category::all();
+
+        return view('posts.edit', compact('post', 'categories'));
+    }
+
+    public function update(Request $request , Post $post)
+    {
+        //Find the user object from model if it exists
+        $post = Post::find($post->id);
+
+        //Set user object attributes
+        $post->title = request('title');
+        $post->user_id = Auth::user()->id;
+        $post->category_id = request('category_id');
+        $post->description = request('description');
+
+        // This will will update your the row in ur db.
+        $post->save();
+
+        $request->session()->flash('flash_message', 'Yeah your post is updated');
+
+        return redirect('profile');
     }
 
     public function store(Request $request)

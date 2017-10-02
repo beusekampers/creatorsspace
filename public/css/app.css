@@ -70,6 +70,14 @@ footer:before {
   background-color: #fff;
 }
 
+.album .card .image {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 10px;
+}
+
 .album .card img {
   margin-bottom: .75rem;
   width: 100%;
@@ -129,8 +137,23 @@ footer:before {
   width: 50px;
 }
 
+.edit .image {
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 20px;
+}
+
 .container.content {
   margin-top: 110px;
+}
+
+.container select {
+  display: block;
+  height: 50px;
+  width: 300px;
+  background-color: #fff;
 }
 
 .wrapper {

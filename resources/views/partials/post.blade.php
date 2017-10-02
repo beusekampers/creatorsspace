@@ -2,7 +2,10 @@
     @foreach ($posts as $post)
         <div class="card">
             <a href="/posts_detail/{{ $post->id }}" class="">
-                <img src="/uploads/posts/{{ $post->post_image }}" alt="" class=""/>
+                <div class="image" style="background-image: url(/uploads/posts/{{ $post->post_image }});">
+                
+                </div>
+                {{-- <img src="/uploads/posts/{{ $post->post_image }}" alt="" class=""/> --}}
                 <div class="col-md-9">
                     <p class="card-text">
                         {{ $post->title }}

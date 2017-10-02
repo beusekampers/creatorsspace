@@ -3,6 +3,13 @@
     &.content{
         margin-top: 110px;
     }
+
+    select{
+        display: block;
+        height: 50px;
+        width: 300px;
+        background-color: #fff;
+    }
 }
 
 .wrapper{

@@ -58,7 +58,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if ($posts)
+                                    {{-- @if ($posts) --}}
                                         @foreach ($posts as $post)
                                             @if ($post->user_id == Auth::user()->id)
                                                 <tr>
@@ -78,14 +78,14 @@
                                                         {{ $post->category->name }}
                                                     </td>
                                                     <td>
-                                                        <a href="#">
+                                                        <a href="/posts/edit/{{ $post->id }}">
                                                             Edit post
                                                         </a> 
                                                     </td>
                                                 </tr>
                                             @endif
                                         @endforeach
-                                    @endif
+                                    {{-- @endif --}}
                                 </tbody>
                             </table>
                         </div>
