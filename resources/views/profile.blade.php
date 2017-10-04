@@ -56,6 +56,7 @@
                                         <th>Category</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
+                                        <th>Active</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,14 +80,23 @@
                                                         {{ $post->category->name }}
                                                     </td>
                                                     <td>
-                                                        <a href="/posts/edit/{{ $post->id }}">
+                                                        <a href="/posts/edit/{{ $post->id }}" class="btn">
                                                             Edit post
                                                         </a> 
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('posts.delete', ['post_id' => $post->id]) }}">
+                                                        <a href="{{ route('posts.delete', ['post_id' => $post->id]) }}" class="btn red">
                                                             Delete
                                                         </a>
+                                                    </td>
+                                                    <td>
+                                                        <form method="POST" action="/posts/{{ $post->id }}" >
+                                                            {{ csrf_field() }}
+                                                            <select name="active" id="active" onchange="this.form.submit()">
+                                                                <option value="1" @if($post->active == 1) selected @endif >On</option>
+                                                                <option value="0" @if($post->active == 0) selected @endif >Off</option>
+                                                            </select>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endif

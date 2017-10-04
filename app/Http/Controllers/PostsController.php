@@ -37,6 +37,19 @@ class PostsController extends Controller
         return view('posts.edit', compact('post', 'categories'));
     }
 
+    public function status(Request $request, Post $post)
+    {
+        $post = Post::find($post->id);
+
+        $post->active = request('active');
+
+        $post->save();
+
+        $request->session()->flash('flash_message', 'Yeah you changed the status of your post');
+
+        return redirect('profile');
+    }
+
     public function update(Request $request , Post $post)
     {
         // Get the right post from the Post Model
