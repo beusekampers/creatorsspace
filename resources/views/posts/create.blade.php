@@ -16,8 +16,8 @@
             </div>
 
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" class="form-control"></textarea>
+                <label for="textarea1">Description</label>
+                <textarea name="description" id="textarea1" class="materialize-textarea"></textarea>
             </div>
 
             <div class="form-group">
@@ -32,7 +32,15 @@
 
             <div class="form-group">
                 <label for="post_image">Artwork</label>
-                <input type="file" name="post_image" class="btn btn-default btn-file"/>
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" name="post_image">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" name="post_image" type="text">
+                    </div>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Publish</button>

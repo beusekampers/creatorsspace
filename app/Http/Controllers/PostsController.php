@@ -10,11 +10,16 @@ use App\Category;
 
 class PostsController extends Controller
 {
-    public function index()
-    {
-        $posts = Post::all();
+    public function index(Request $request, $id = '')
+    {   
+        $categories = Category::all();
 
-        return view('welcome', compact('posts'));
+        if($id == '')
+            $posts = Post::orderBy('created_at', 'desc')->paginate(1);
+        else
+            $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(1);   
+
+        return view('welcome', compact('posts', 'categories'));
 
     }
 

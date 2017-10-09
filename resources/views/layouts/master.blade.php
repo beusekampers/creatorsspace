@@ -8,13 +8,11 @@
 
     <link rel="stylesheet" href="/css/app.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    {{-- Bootstrap CSS --}}
-{{-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> --}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <!-- Branding Image -->
@@ -32,7 +30,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
+                            <li class="dropdown right">
                                 <a href="#" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
                                     <div class="avatar">
@@ -76,7 +74,7 @@
         @guest
         @else
         <div class="upload-btn">
-            <a href="{{ url('posts/create') }}" class="btn-floating btn-large waves-effect waves-light red">
+            <a href="{{ url('posts/create') }}" class="btn-floating btn-large waves-effect waves-light">
                 <i class="material-icons">add</i>
             </a>
         </div>

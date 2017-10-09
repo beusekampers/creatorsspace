@@ -24,7 +24,15 @@
                         <form action="/profile" class="clearfix" enctype="multipart/form-data" method="POST">
                             {{ csrf_field() }}
 
-                            <input type="file" name="profile_picture" class="btn btn-default btn-file"/>
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file" name="profile_picture">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" name="profile_picture" type="text">
+                                </div>
+                            </div>
                             <input type="submit" class="btn btn-primary"/>
                         </form>
                     </div>
@@ -60,7 +68,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @if ($posts) --}}
+                                    @if($posts)
                                         @foreach ($posts as $post)
                                             @if ($post->user_id == Auth::user()->id)
                                                 <tr>
@@ -101,7 +109,7 @@
                                                 </tr>
                                             @endif
                                         @endforeach
-                                    {{-- @endif --}}
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

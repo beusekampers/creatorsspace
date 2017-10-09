@@ -13,8 +13,9 @@
 
 Route::get('/', 'PostsController@index');
 
-Route::get('/posts_detail/{post}', 'PostsController@show');
+Route::get('/category/{id}', 'PostsController@index')->name("category");
 
+Route::get('/posts_detail/{post}', 'PostsController@show');
 Route::get('posts/create', 'PostsController@create')->middleware('auth');
 Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');
 Route::post('posts/edit/{post}', 'PostsController@update')->middleware('auth');

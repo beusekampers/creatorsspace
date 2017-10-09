@@ -8,6 +8,28 @@
         display: block;
         width: 70px;
     }
+    #search-bar{
+
+        .input-field{
+            margin-top: 0px;
+        }
+
+        #search{
+            height: 50px;
+            margin-bottom: 0;
+            padding-left: 50px;
+            box-sizing: border-box;
+        }
+
+        .close-search{
+            padding-top: 10px;
+        }
+    }
+
+    .category-btn{
+        margin-top: 6px;
+        width: 100%;
+    }
 }
 
 .wrapper{

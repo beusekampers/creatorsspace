@@ -11,13 +11,18 @@ class UserController extends Controller
 {
 
     public function profile(){
-    	return view('profile', array('user' => Auth::user()) );
+        $posts = Post::all();
+    	return view('profile', [
+            'user' => Auth::user(),
+            'posts' => compact('posts')
+        ]);
     }
 
     public function update_avatar(Request $request){
 
     	// Handle the user upload of avatar
     	if($request->hasFile('profile_picture')){
+            
     		$profile_picture = $request->file('profile_picture');
     		$filename = time() . '.' . $profile_picture->getClientOriginalExtension();
     		Image::make($profile_picture)->save( public_path('/uploads/avatars/' . $filename ) );
@@ -27,7 +32,8 @@ class UserController extends Controller
     		$user->save();
     	}
 
-    	return view('profile', array('user' => Auth::user()) );
+    	// return view('profile', array('user' => Auth::user()) );
+        return redirect('profile');
 
     }
 
