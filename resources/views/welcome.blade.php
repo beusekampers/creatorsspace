@@ -3,13 +3,39 @@
     @section('content')
         <div class="row">
             <div class="col s9">
-                <form id="search-bar">
-                    <div class="input-field">
-                        <input id="search" type="search" placeholder="Search for anything!" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons close-search">close</i>
-                    </div>
-                </form>
+                <div id="search">
+                    <ais-index app-id="{{ config('scout.algolia.id') }}"
+                            api-key="{{ env('ALGOLIA_SEARCH') }}"
+                            index-name="posts">
+                        
+                        <ais-input id="input" placeholder="Search posts..."></ais-input>
+
+                        <div id="resultWrap" style="display:none;">
+                            <ul class="results">
+                            <ais-results>
+                                <template scope="{ result }">
+                                    {{-- @foreach ($posts as $post) --}}
+                                    <li class="result">
+                                        <p> 
+                                            @{{ result.title }}
+                                        </p>
+                                        <p>
+                                            @{{ result.description }}
+                                        </p>   
+                                    </li>
+                                    {{-- @endforeach --}}
+                                </template>
+                            </ais-results>
+                            <ais-no-results>
+                                <template scope="props">
+                                    No products found for <b>@{{ props.query }}</b>
+                                </template>
+                            </ais-no-results>
+                            </ul>
+                        </div>
+
+                    </ais-index>
+                </div>
             </div>
             <div class="col s3">
                 <!-- Dropdown Trigger -->

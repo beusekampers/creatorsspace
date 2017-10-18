@@ -11,7 +11,7 @@ class UserController extends Controller
 {
 
     public function profile(){
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
     	return view('profile', [
             'user' => Auth::user(),
             'posts' => compact('posts')

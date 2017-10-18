@@ -7,17 +7,19 @@ use Auth;
 use App\Post;
 use Image;
 use App\Category;
+// use Laravel\Scout\Searchable;
 
 class PostsController extends Controller
 {
     public function index(Request $request, $id = '')
     {   
+
         $categories = Category::all();
 
         if($id == '')
-            $posts = Post::orderBy('created_at', 'desc')->paginate(1);
+            $posts = Post::orderBy('created_at', 'desc')->paginate(12);
         else
-            $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(1);   
+            $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(12);   
 
         return view('welcome', compact('posts', 'categories'));
 

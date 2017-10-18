@@ -15,6 +15,10 @@ Route::get('/', 'PostsController@index');
 
 Route::get('/category/{id}', 'PostsController@index')->name("category");
 
+Route::get('/posts/search/{query}', function($query){
+    return App\Post::search($query)->get();
+});
+
 Route::get('/posts_detail/{post}', 'PostsController@show');
 Route::get('posts/create', 'PostsController@create')->middleware('auth');
 Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');

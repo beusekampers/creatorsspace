@@ -9,6 +9,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -18,5 +21,16 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#search',
 });
+
+var input = document.getElementById("input");
+var searchBox = document.getElementById("resultWrap");
+
+input.addEventListener("focus", function() {
+  searchBox.style.display = "block";    
+}, true);
+
+input.addEventListener("blur", function() {
+  searchBox.style.display = "none";    
+}, true);
