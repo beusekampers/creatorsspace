@@ -17,7 +17,7 @@
                                     {{-- @foreach ($posts as $post) --}}
                                     <li class="result">
                                         <p> 
-                                            @{{ result.title }}
+                                            @{{ result.title }} 
                                         </p>
                                         <p>
                                             @{{ result.description }}

@@ -24,6 +24,7 @@ Route::get('posts/create', 'PostsController@create')->middleware('auth');
 Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');
 Route::post('posts/edit/{post}', 'PostsController@update')->middleware('auth');
 Route::post('posts/{post}', 'PostsController@status')->middleware('auth');
+Route::post('/posts/{post}/comment', 'CommentsController@store');
 
 Route::get('/delete-post/{post}', [
     'uses' => 'PostsController@delete',
