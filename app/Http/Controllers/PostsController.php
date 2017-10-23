@@ -7,7 +7,8 @@ use Auth;
 use App\Post;
 use Image;
 use App\Category;
-// use Laravel\Scout\Searchable;
+use App\User;
+use DB;
 
 class PostsController extends Controller
 {
@@ -17,15 +18,27 @@ class PostsController extends Controller
         $categories = Category::all();
 
         if($id == '')
+        {
             $posts = Post::orderBy('created_at', 'desc')->paginate(12);
+        }
         else
+        {
             $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(12);   
-
+        }
+        
         return view('welcome', compact('posts', 'categories'));
 
     }
 
-    public function show(Post $post){ // Elequent to -> $posts = PostsFromUser::find($id) <- wildcard;
+    public function show(Post $post, Request $request){ // Elequent to -> $posts = PostsFromUser::find($id) <- wildcard;
+        
+        if (Auth::check())
+        {
+            $user = Auth::user()->id;
+            $qPost = DB::table('posts')->groupBy('user_id')->where('user_id', '=', $user)->count();
+
+            return view('posts.show', compact('post', 'qPost'));
+        }
 
         return view('posts.show', compact('post'));
         

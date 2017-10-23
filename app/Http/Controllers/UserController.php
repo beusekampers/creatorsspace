@@ -46,7 +46,7 @@ class UserController extends Controller
     {
         // Get the users posts
         $posts = Post::all();
-
+   
         return view('profile', compact('posts'));
     }
 

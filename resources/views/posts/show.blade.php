@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title', 'Detail Page')
 
+@section('parallax')
+    {{-- <div class="parallax" style="background-image: url(/uploads/posts/{{ $post->post_image }});"></div> --}}
+@endsection
+
 @section('content')
     <div class="wrapper detail clearfix">
         <div class="post-detail">
@@ -39,20 +43,35 @@
                     @endforeach
                 </ul>
             </div>
-
-            <div class="col-md-12">
-                <div class="card-block">
-                    <form action="/posts/{{ $post->id }}/comment" method="POST">
-                    {{ csrf_field() }}
-                        <div class="form-group">
-                            <textarea name="body" id="" placeholder="Your comment here." class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Publish</button>
-                        </div>
-                    </form>
+            @guest
+                <div class="col-md-12">
+                    <p>
+                        Login in <a href="{{ route('login') }}">here</a> to add a comment
+                    </p>
                 </div>
-            </div>
+            @else
+                @if ($qPost >= 5)
+                <div class="col-md-12">
+                    <div class="card-block">
+                        <form action="/posts/{{ $post->id }}/comment" method="POST">
+                        {{ csrf_field() }}
+                            <div class="form-group">
+                                <textarea name="body" id="" placeholder="Place your comment here." class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Publish</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                @else
+                    <div class="col-md-12">
+                        <p>
+                            You need to upload at least 5 posts to place a comment.
+                        </p>
+                    </div>
+                @endif
+            @endguest
         </div>
     </div>
     {{-- <a href="/">Terug</a> --}}
