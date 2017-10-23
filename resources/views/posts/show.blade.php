@@ -57,7 +57,7 @@
                         <form action="/posts/{{ $post->id }}/comment" method="POST">
                         {{ csrf_field() }}
                             <div class="form-group">
-                                <textarea name="body" id="" placeholder="Place your comment here." class="form-control"></textarea>
+                                <textarea name="body" id="" placeholder="Place your comment here." class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Publish</button>
