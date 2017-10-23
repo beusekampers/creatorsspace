@@ -18,7 +18,7 @@
                 <div class="navbar-header">
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'CS') }}
                     </a>
                 </div>
 
@@ -69,9 +69,12 @@
                 </div>
             </div>
         </nav>
+        {{-- Main content --}}
         <div class="container content">
             @yield('content')
         </div>
+        {{-- Detail page content --}}
+        @yield('detail-page')
         @guest
         @else
         <div class="upload-btn">

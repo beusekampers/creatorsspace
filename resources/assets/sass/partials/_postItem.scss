@@ -42,13 +42,48 @@
 }
 
 // Detail page of post
+.parallax-wrapper{
+    position: relative;
+
+    .parallax{
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px;
+        margin-top: -110px;
+
+        &.materialboxed.active{
+            top: 30% !important;
+        }
+    }
+
+    .download{
+
+        a{
+            position: absolute;
+            bottom: 30px;
+            right: 44px;
+        }
+    }
+}
 
 .detail{
-    
-    // h1{ margin-top: 0px;}
+    position: relative;
+    top: -150px;
+    max-width: 40%;
+    margin: 0 auto;
+    border-radius: 2px;
 
-    .post-image{
+    .comments{
 
-        img{ width: 100%;}
+        .comment{
+            width: 70%;
+            display: inline-block;
+        }
+
+        .user-image{
+            width: 25%;
+        }
     }
 }

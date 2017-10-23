@@ -108,8 +108,44 @@ footer:before {
   border-radius: 50%;
 }
 
-.detail .post-image img {
-  width: 100%;
+.parallax-wrapper {
+  position: relative;
+}
+
+.parallax-wrapper .parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  margin-top: -110px;
+}
+
+.parallax-wrapper .parallax.materialboxed.active {
+  top: 30% !important;
+}
+
+.parallax-wrapper .download a {
+  position: absolute;
+  bottom: 30px;
+  right: 44px;
+}
+
+.detail {
+  position: relative;
+  top: -150px;
+  max-width: 40%;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.detail .comments .comment {
+  width: 70%;
+  display: inline-block;
+}
+
+.detail .comments .user-image {
+  width: 25%;
 }
 
 #search {

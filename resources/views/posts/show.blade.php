@@ -1,18 +1,17 @@
 @extends('layouts.master')
 @section('title', 'Detail Page')
 
-@section('parallax')
-    {{-- <div class="parallax" style="background-image: url(/uploads/posts/{{ $post->post_image }});"></div> --}}
-@endsection
-
-@section('content')
-    <div class="wrapper detail clearfix">
+@section('detail-page')
+    <div class="parallax-wrapper">
+        <div class="parallax materialboxed" style="background-image: url(/uploads/posts/{{ $post->post_image }});"></div>
+        <div class="download">
+            <a href="/uploads/posts/{{ $post->post_image }}" download class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">cloud_download</i>
+            </a>
+        </div>
+    </div>
+    <div class="wrapper z-depth-3 detail clearfix">
         <div class="post-detail">
-            <div class="col-md-6">
-                <div class="post-image">
-                    <img src="/uploads/posts/{{ $post->post_image }}" alt="" class=""/>
-                </div>
-            </div>
             <div class="col-md-6">
                 <h1>{{ $post->title }}</h1>
                 <p>{{ $post->description }}</p>
@@ -30,12 +29,14 @@
                 <ul class="collection">
                     @foreach ($post->comments as $comment)
                         <li class="collection-item">
-                            <label>
-                                {{ $comment->created_at->diffForHumans() }} - 
-                            </label>
-                            {{ $comment->body }}
+                            <div class="comment">
+                                <label>
+                                    {{ $comment->created_at->diffForHumans() }} - 
+                                </label>
+                                {{ $comment->body }}
+                            </div>
 
-                            <div class="chip right">
+                            <div class="user-image chip right">
                                 <img src="/uploads/avatars/{{ $comment->user->profile_picture }}" alt="User"/>
                                 {{ $comment->user->name }}
                             </div>
