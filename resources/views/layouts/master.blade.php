@@ -17,12 +17,12 @@
             <div class="container">
                 <div class="navbar-header">
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'CS') }}
+                    <a href="{{ url('/') }}">
+                        Creators Space
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <div class="collapse navbar-collapse" style="width: 40%; float:right;" id="app-navbar-collapse">
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -32,15 +32,16 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown right">
-                                <a href="#" class="dropdown-toggle clearfix" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
+
+
+                                <a class='dropdown-toggle dropdown-button' href='#' data-activates='dropdown2'>
+                                    <i class="material-icons">expand_more</i>
                                     <div class="avatar">
                                         <img src="/uploads/avatars/{{ Auth::user()->profile_picture }}" alt="Profile" />
                                     </div>
-                                    <span class="glyphicon glyphicon-chevron-down arrow"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul id='dropdown2' style="margin-top: 65px;" class='dropdown-content'>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -83,13 +84,19 @@
             </a>
         </div>
         @endguest
-
-        <footer class="text-muted">
+        <footer class="page-footer">
             <div class="container">
-                <p class="float-right">
-                    <a href="#">Back to top</a>
-                </p>
-                <p>&copy; 2017</p>
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Creators Space</h5>
+                        <p class="grey-text text-lighten-4">Share your creativity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                © 2017 Copyright
+                </div>
             </div>
         </footer>
 

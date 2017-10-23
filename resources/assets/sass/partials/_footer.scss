@@ -1,11 +1,10 @@
 footer{
-    text-align: center;
     display: block;
     margin-top: 50px;
     bottom: 0;
     width: 100%;
     height: auto;
-    background-color: $green-bg;
+    background-color: $green-bg !important;
 
     p{
         padding: 20px 0px 20px 0px;

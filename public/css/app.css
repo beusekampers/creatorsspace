@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://fonts.googleapis.com/css?family=Lobster);@charset "UTF-8";
 
 * {
   font-size: 14px;
@@ -9,15 +9,39 @@
   background-color: #26a69a;
 }
 
+.navbar .navbar-header {
+  font-family: "Lobster", cursive;
+  height: 64px;
+  line-height: 55px;
+}
+
+.navbar .navbar-header a {
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.navbar .navbar-header a:hover {
+  color: #ECECEC !important;
+}
+
 .navbar .navbar-collapse {
   position: relative;
+}
+
+.navbar .navbar-collapse .navbar-right {
+  margin-right: 0px !important;
+}
+
+.navbar .navbar-collapse .navbar-right i {
+  font-size: 40px;
+  float: right;
 }
 
 .navbar .navbar-collapse .navbar-right .avatar {
   width: 50px;
   height: 50px;
   float: left;
-  margin-right: 15px;
+  margin-left: 10px;
 }
 
 .navbar .navbar-collapse .navbar-right .avatar img {
@@ -28,6 +52,7 @@
 
 .navbar .navbar-collapse .navbar-right li.dropdown a.dropdown-toggle {
   padding: 8px 0 6px 0;
+  width: 100px;
   background-color: #26a69a;
 }
 
@@ -41,13 +66,12 @@
 }
 
 footer {
-  text-align: center;
   display: block;
   margin-top: 50px;
   bottom: 0;
   width: 100%;
   height: auto;
-  background-color: #26a69a;
+  background-color: #26a69a !important;
 }
 
 footer p {
@@ -137,6 +161,10 @@ footer:before {
   max-width: 40%;
   margin: 0 auto;
   border-radius: 2px;
+}
+
+.detail h2 {
+  font-family: "Lobster", cursive;
 }
 
 .detail .comments .comment {

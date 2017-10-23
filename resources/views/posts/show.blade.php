@@ -13,7 +13,7 @@
     <div class="wrapper z-depth-3 detail clearfix">
         <div class="post-detail">
             <div class="col-md-6">
-                <h1>{{ $post->title }}</h1>
+                <h2>{{ $post->title }}</h2>
                 <p>{{ $post->description }}</p>
                 <p>{{ $post->category->name }}</p>
                 <p>{{ $post->user->name }}</p>
@@ -21,9 +21,9 @@
         </div>
         <div class="comments clearfix">
             <div class="col-md-12">
-                <h1>
+                <h2>
                     Comments
-                </h1>
+                </h2>
             </div>
             <div class="col-md-12">
                 <ul class="collection">
