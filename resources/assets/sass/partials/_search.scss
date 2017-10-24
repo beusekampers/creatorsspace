@@ -1,9 +1,25 @@
 #search{
     position: relative;
 
-    #input{
-        margin-bottom: 0px;
+    .searchbar{
+        position: relative;
+
+        #close{
+            position: absolute;
+            display: none;
+            cursor: pointer;
+            top: 4px;
+            right: 5px;
+
+            i{
+                font-size: 40px;
+            }
+        }
     }
+
+        #input{
+            margin-bottom: 0px;
+        }
 
     #resultWrap{
         display: block;
@@ -19,12 +35,29 @@
             box-sizing: border-box;
             margin-bottom: 0px;
 
-            .result{
+            a{
                 border-bottom: 1px solid $green-bg;
-                margin: 10px 0 10px 0;
+                display: block;
 
-                p{
-                    margin: 0px;
+                &:last-child{
+                    border: 0px;
+                }
+
+                &:hover{
+                    text-decoration: none;
+
+                    p{
+                        background-color: #F5F5F5;
+                    }
+                }
+
+                .result{
+
+                    p{
+                        padding: 10px 0 10px 10px;
+                        color: $green-bg;
+                        margin: 0px;
+                    }
                 }
             }
         }

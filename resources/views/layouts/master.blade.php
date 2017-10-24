@@ -71,7 +71,7 @@
             </div>
         </nav>
         {{-- Main content --}}
-        <div class="container content">
+        <div id="container" class="container content">
             @yield('content')
         </div>
         {{-- Detail page content --}}

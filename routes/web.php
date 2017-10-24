@@ -19,11 +19,11 @@ Route::get('/posts/search/{query}', function($query){
     return App\Post::search($query)->get();
 });
 
-Route::get('/posts_detail/{post}', 'PostsController@show');
+Route::get('/{post}', 'PostsController@show')->name("detail");
 Route::get('posts/create', 'PostsController@create')->middleware('auth');
 Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');
 Route::post('posts/edit/{post}', 'PostsController@update')->middleware('auth');
-Route::post('posts/{post}', 'PostsController@status')->middleware('auth');
+Route::post('posts/{post}', 'PostsController@status')->middleware('auth')->name('status');
 Route::post('/posts/{post}/comment', 'CommentsController@store');
 
 Route::get('/delete-post/{post}', [

@@ -59,7 +59,6 @@ class PostsController extends Controller
 
     public function status(Request $request, Post $post)
     {
-        $post = Post::find($post->id);
 
         $post->active = request('active');
 

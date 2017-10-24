@@ -98,7 +98,7 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <form method="POST" action="/posts/{{ $post->id }}" >
+                                                        <form method="POST" action="{{ route("status", $post->id) }}" >
                                                             {{ csrf_field() }}
                                                             <select name="active" id="active" onchange="this.form.submit()">
                                                                 <option value="1" @if($post->active == 1) selected @endif >On</option>

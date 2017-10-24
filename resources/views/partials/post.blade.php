@@ -2,7 +2,7 @@
     @foreach ($posts as $post)
         @if ($post->active == 1)
             <div class="card">
-                <a href="/posts_detail/{{ $post->id }}" class="">
+                <a href="{{ route("detail", $post->id) }}" class="">
                     <div class="image" style="background-image: url(/uploads/posts/{{ $post->post_image }});">
                     
                     </div>

@@ -12,11 +12,18 @@
     </div>
     <div class="wrapper z-depth-3 detail clearfix">
         <div class="post-detail">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h2>{{ $post->title }}</h2>
                 <p>{{ $post->description }}</p>
-                <p>{{ $post->category->name }}</p>
-                <p>{{ $post->user->name }}</p>
+            </div>
+            <div class="col-md-12 user-info">
+                <div class="user-image chip left">
+                    <img src="/uploads/avatars/{{ $post->user->profile_picture }}" alt="User"/>
+                    <span> <b>Author:</b> </span>{{ $post->user->name }}
+                </div>
+                <div class="chip left">
+                    <span> <b>Category:</b> {{ $post->category->name }}</span>
+                </div>
             </div>
         </div>
         <div class="comments clearfix">

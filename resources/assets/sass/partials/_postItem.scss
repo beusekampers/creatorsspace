@@ -8,12 +8,24 @@
 
     .card{
         float: left;
-        width: 33.333%;
+        width: 32%;
+        margin-right: 2%;
         padding: .75rem;
         margin-bottom: 2rem;
         border: 0;
         box-sizing: border-box;
         background-color: $white-bg;
+        transition: 0.3s;
+
+        &:nth-child(3n+3){
+            margin-right: 0px;
+        }
+
+        &:hover{
+            transition: 0.3s;
+            -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+        }
 
         .image{
             height: 200px;
@@ -77,6 +89,17 @@
 
     h2{
         font-family: $font-family-lobster;
+    }
+
+    .post-detail{
+
+        .user-info{
+            border-top: 1px solid #ECECEC;
+            border-bottom: 1px solid #ECECEC;
+            margin-top: 40px;
+            padding-top: 20px;
+            padding-bottom: 16px;
+        }
     }
 
     .comments{

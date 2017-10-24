@@ -99,13 +99,27 @@ footer:before {
 
 .album .card {
   float: left;
-  width: 33.333%;
+  width: 32%;
+  margin-right: 2%;
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.album .card:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+.album .card:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
 .album .card .image {
@@ -167,6 +181,14 @@ footer:before {
   font-family: "Lobster", cursive;
 }
 
+.detail .post-detail .user-info {
+  border-top: 1px solid #ECECEC;
+  border-bottom: 1px solid #ECECEC;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+}
+
 .detail .comments .comment {
   width: 70%;
   display: inline-block;
@@ -178,6 +200,22 @@ footer:before {
 
 #search {
   position: relative;
+}
+
+#search .searchbar {
+  position: relative;
+}
+
+#search .searchbar #close {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  top: 4px;
+  right: 5px;
+}
+
+#search .searchbar #close i {
+  font-size: 40px;
 }
 
 #search #input {
@@ -202,12 +240,26 @@ footer:before {
   margin-bottom: 0px;
 }
 
-#search #resultWrap .results .result {
+#search #resultWrap .results a {
   border-bottom: 1px solid #26a69a;
-  margin: 10px 0 10px 0;
+  display: block;
 }
 
-#search #resultWrap .results .result p {
+#search #resultWrap .results a:last-child {
+  border: 0px;
+}
+
+#search #resultWrap .results a:hover {
+  text-decoration: none;
+}
+
+#search #resultWrap .results a:hover p {
+  background-color: #F5F5F5;
+}
+
+#search #resultWrap .results a .result p {
+  padding: 10px 0 10px 10px;
+  color: #26a69a;
   margin: 0px;
 }
 

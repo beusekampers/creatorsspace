@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="album text-muted">
-        <h1>
+        <h2>
             Create a post
-        </h1>
+        </h2>
 
         <hr>
 
@@ -12,12 +12,12 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control" id="title" name="title" required>
             </div>
 
             <div class="form-group">
                 <label for="textarea1">Description</label>
-                <textarea name="description" id="textarea1" class="materialize-textarea"></textarea>
+                <textarea name="description" id="textarea1" class="materialize-textarea" required></textarea>
             </div>
 
             <div class="form-group">
@@ -38,7 +38,7 @@
                         <input type="file" name="post_image">
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" name="post_image" type="text">
+                        <input class="file-path validate" name="post_image" type="text" required>
                     </div>
                 </div>
             </div>

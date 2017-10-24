@@ -9857,14 +9857,17 @@ var app = new Vue({
 
 var input = document.getElementById("input");
 var searchBox = document.getElementById("resultWrap");
+var closeIcon = document.getElementById("close");
 
-input.addEventListener("focus", function () {
+input.addEventListener("click", function () {
   searchBox.style.display = "block";
+  closeIcon.style.display = "block";
 }, true);
 
-input.addEventListener("blur", function () {
+closeIcon.addEventListener("click", function () {
   searchBox.style.display = "none";
-}, true);
+  closeIcon.style.display = "none";
+});
 
 /***/ }),
 /* 161 */

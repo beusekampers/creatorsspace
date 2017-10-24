@@ -7,23 +7,24 @@
                     <ais-index app-id="{{ config('scout.algolia.id') }}"
                             api-key="{{ env('ALGOLIA_SEARCH') }}"
                             index-name="posts">
-                        
-                        <ais-input id="input" placeholder="Search posts..."></ais-input>
+                        <div class="searchbar">
+                            <ais-input id="input" placeholder="Search posts..."></ais-input>
+                            <span id="close">
+                                <i class="material-icons">close</i>
+                            </span>
+                        </div>
 
                         <div id="resultWrap" style="display:none;">
                             <ul class="results">
                             <ais-results>
                                 <template scope="{ result }">
-                                    {{-- @foreach ($posts as $post) --}}
-                                    <li class="result">
-                                        <p> 
-                                            @{{ result.title }} 
-                                        </p>
-                                        <p>
-                                            @{{ result.description }}
-                                        </p>   
-                                    </li>
-                                    {{-- @endforeach --}}
+                                    <a v-bind:href="result.id">
+                                        <li class="result">
+                                            <p> 
+                                                <b>@{{ result.title }}</b>
+                                            </p>
+                                        </li>
+                                    </a>
                                 </template>
                             </ais-results>
                             <ais-no-results>
