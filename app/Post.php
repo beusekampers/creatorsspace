@@ -40,4 +40,9 @@ class Post extends Model
         
         $this->comments()->create(compact('user_id','body'));
     }
+
+    public function liked()
+    {
+        return $this->hasMany(LikedPost::class, 'post_id');
+    }
 }

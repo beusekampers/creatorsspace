@@ -19,13 +19,12 @@ Route::get('/posts/search/{query}', function($query){
     return App\Post::search($query)->get();
 });
 
-Route::get('/{post}', 'PostsController@show')->name("detail");
+Route::get('/detail/{post}', 'PostsController@show')->name("detail");
 Route::get('posts/create', 'PostsController@create')->middleware('auth');
 Route::get('posts/edit/{post}', 'PostsController@edit')->middleware('auth');
 Route::post('posts/edit/{post}', 'PostsController@update')->middleware('auth');
 Route::post('posts/{post}', 'PostsController@status')->middleware('auth')->name('status');
 Route::post('/posts/{post}/comment', 'CommentsController@store');
-
 Route::get('/delete-post/{post}', [
     'uses' => 'PostsController@delete',
     'as' => 'posts.delete',
@@ -34,10 +33,12 @@ Route::get('/delete-post/{post}', [
 
 Route::post('/posts', 'PostsController@store');
 
+Route::post('liked/{post}', 'likedController@store')->middleware('auth');
+
 // Profile route and avatar update controller
-Route::get('profile', 'UserController@profile')->middleware('auth');
-Route::post('profile', 'UserController@update_avatar')->middleware('auth');
-Route::get('profile', 'UserController@index')->middleware('auth');
+Route::get('/profile', 'UserController@profile')->middleware('auth');
+Route::post('/profile', 'UserController@update_avatar')->middleware('auth');
+Route::get('/profile', 'UserController@index')->middleware('auth')->name('profile');
 
 Auth::routes();
 

@@ -18,7 +18,7 @@
                             <ul class="results">
                             <ais-results>
                                 <template scope="{ result }">
-                                    <a v-bind:href="result.id">
+                                    <a :href.literal="result.id">
                                         <li class="result">
                                             <p> 
                                                 <b>@{{ result.title }}</b>

@@ -11,9 +11,12 @@
                         <p class="card-text">
                             {{ $post->title }}
                         </p>
-                        <span class="description">
+                        <p class="description">
                             {{ $post->description }}
-                        </span>
+                        </p>
+                        <p>  
+                            <b> Likes: </b>{{ $post->liked->count() }}
+                        </p>
                     </div>
                     <div class="col-md-3">
                         <div class="avatar">

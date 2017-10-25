@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Post;
 
 class User extends Authenticatable
 {
@@ -17,6 +18,17 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany('App\Comment');
+    }
+
+    public function liked()
+    {
+        return $this->belongsToMany('App\Post', 'liked_posts')
+            ->withTimestamps();
+    }
+
+    public function likedFor(Post $post)
+    {
+        return $post->liked->contains('user_id', $this->id);
     }
 
     /**

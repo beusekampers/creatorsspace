@@ -13,8 +13,26 @@
     <div class="wrapper z-depth-3 detail clearfix">
         <div class="post-detail">
             <div class="col-md-12">
-                <h2>{{ $post->title }}</h2>
-                <p>{{ $post->description }}</p>
+                <div class="title-like clearfix">
+                    <div class="col-md-9 title">
+                        <h2>{{ $post->title }}</h2>
+                    </div>
+                    <div class="col-md-3 like">
+                        <form method="POST" action="/liked/{{ $post->id }}">
+                            {{ csrf_field() }}
+
+                            <button class="like-btn {{ Auth::check() && Auth::user()->likedFor($post) ? 'like-succes' : '' }}">
+                                <i class="material-icons">thumb_up</i>
+                            </button>
+                            <span>
+                                {{ $post->liked->count() }}
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <p>{{ $post->description }}</p>
+                </div>
             </div>
             <div class="col-md-12 user-info">
                 <div class="user-image chip left">

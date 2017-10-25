@@ -177,8 +177,30 @@ footer:before {
   border-radius: 2px;
 }
 
-.detail h2 {
+.detail .title-like .title h2 {
   font-family: "Lobster", cursive;
+}
+
+.detail .title-like .like {
+  margin-top: 30px;
+}
+
+.detail .title-like .like button {
+  border: 0px;
+  background-color: transparent;
+}
+
+.detail .title-like .like button i {
+  font-size: 50px;
+}
+
+.detail .title-like .like button.like-succes i {
+  color: #26a69a;
+}
+
+.detail .title-like span {
+  float: right;
+  font-size: 35px;
 }
 
 .detail .post-detail .user-info {

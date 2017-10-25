@@ -54,7 +54,7 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{{ url('profile') }}">
+                                        <a href="{{ url('/profile') }}">
                                             Profile
                                         </a>
                                     </li>

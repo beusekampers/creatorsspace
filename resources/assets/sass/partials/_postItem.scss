@@ -87,8 +87,40 @@
     margin: 0 auto;
     border-radius: 2px;
 
-    h2{
-        font-family: $font-family-lobster;
+
+    .title-like{
+
+        .title{
+            
+            h2{
+                font-family: $font-family-lobster;
+            }       
+        }
+
+        .like{
+            margin-top: 30px;
+            
+            button{
+                border: 0px;
+                background-color: rgba(0,0,0,0);
+
+                i{
+                    font-size: 50px;
+                }
+
+                &.like-succes{
+
+                    i{
+                        color: $green-bg;
+                    }   
+                }
+            }
+        }
+
+        span{
+            float: right;
+            font-size: 35px;
+        }
     }
 
     .post-detail{

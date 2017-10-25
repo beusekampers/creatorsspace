@@ -19,11 +19,11 @@ class PostsController extends Controller
 
         if($id == '')
         {
-            $posts = Post::orderBy('created_at', 'desc')->paginate(12);
+            $posts = Post::orderBy('created_at', 'desc')->with('liked')->paginate(12);
         }
         else
         {
-            $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->paginate(12);   
+            $posts = Post::where('category_id', '=', $id)->orderBy('created_at', 'desc')->with('liked')->paginate(12);   
         }
         
         return view('welcome', compact('posts', 'categories'));
@@ -115,8 +115,6 @@ class PostsController extends Controller
     }
 
     public function delete(Request $request,Post $post){
-
-        $post = Post::find($post->id);
 
         $post->delete();
 
