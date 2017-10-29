@@ -7,6 +7,7 @@ use Auth;
 use App\Post;
 use Image;
 use App\Category;
+use Laravel\Scout\Searchable;
 use App\User;
 use DB;
 
