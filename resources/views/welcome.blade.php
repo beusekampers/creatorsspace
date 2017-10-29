@@ -6,7 +6,7 @@
                 <div id="search">
                     <ais-index app-id="{{ config('scout.algolia.id') }}"
                             api-key="{{ env('ALGOLIA_SEARCH') }}"
-                            index-name="posts">
+                            index-name="title">
                         <div class="searchbar">
                             <ais-input id="input" placeholder="Search posts..."></ais-input>
                             <span id="close">

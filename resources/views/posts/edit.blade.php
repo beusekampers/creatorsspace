@@ -1,10 +1,10 @@
 @extends('layouts/master')
 
 @section('content')
-    <div class="album text-muted edit">
-        <h1>
-            Update {{ $post->title }}
-        </h1>
+    <div class="wrapper create z-depth-3 clearfix edit">
+        <h2>
+            Update - {{ $post->title }}
+        </h2>
 
         <hr>
 

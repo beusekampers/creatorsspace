@@ -5,12 +5,12 @@
     @if(Session::has('flash_message'))
         <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
     @endif
-    <div class="wrapper profile">
+    <div class="wrapper z-depth-3 profile">
         <div class="row">
             <div class="col-md-12">
-                <h1>
+                <h2>
                     {{ Auth::user()->name }}'s profile
-                </h1>
+                </h2>
             </div>
 
             <div class="col-md-12 profile">
@@ -45,9 +45,9 @@
         <div class="uploads">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>
+                    <h2>
                         Upload overview
-                    </h1>
+                    </h2>
                     <a href=" {{ url('posts/create') }}">
                         Upload new post
                     </a>
@@ -88,7 +88,7 @@
                                                         {{ $post->category->name }}
                                                     </td>
                                                     <td>
-                                                        <a href="/posts/edit/{{ $post->id }}" class="btn">
+                                                        <a href="{{ route("edit", $post->id) }}" class="btn">
                                                             Edit post
                                                         </a> 
                                                     </td>

@@ -1,4 +1,11 @@
 .profile{
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+
+    h2{
+        font-family: $font-family-lobster;
+    }
 
     .profile-image{
         margin: 20px 0 20px 0;

@@ -9,6 +9,11 @@
                 <i class="material-icons">cloud_download</i>
             </a>
         </div>
+        <div class="back-btn">
+            <a href="/" style="margin-left: 100px;" class="btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">navigate_before</i>
+            </a>
+        </div>
     </div>
     <div class="wrapper z-depth-3 detail clearfix">
         <div class="post-detail">
@@ -21,13 +26,18 @@
                         <form method="POST" action="/liked/{{ $post->id }}">
                             {{ csrf_field() }}
 
-                            <button class="like-btn {{ Auth::check() && Auth::user()->likedFor($post) ? 'like-succes' : '' }}">
+                            <button @guest disabled @endguest  class="like-btn {{ Auth::check() && Auth::user()->likedFor($post) ? 'like-succes' : '' }}">
                                 <i class="material-icons">thumb_up</i>
                             </button>
-                            <span>
+                            <span class="amount-like">
                                 {{ $post->liked->count() }}
                             </span>
                         </form>
+                        @guest
+                            <span>
+                                Login in <a href="{{ route('login') }}">here</a> to like.
+                            </span>
+                        @endguest
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -100,6 +110,4 @@
             @endguest
         </div>
     </div>
-    {{-- <a href="/">Terug</a> --}}
-
 @endsection

@@ -31,16 +31,17 @@ class PostsController extends Controller
     }
 
     public function show(Post $post, Request $request){ // Elequent to -> $posts = PostsFromUser::find($id) <- wildcard;
-        
+        $categories = Category::all();
+
         if (Auth::check())
         {
             $user = Auth::user()->id;
             $qPost = DB::table('posts')->groupBy('user_id')->where('user_id', '=', $user)->count();
 
-            return view('posts.show', compact('post', 'qPost'));
+            return view('posts.show', compact('post', 'qPost', 'categories'));
         }
 
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post', 'categories'));
         
     }
 
@@ -66,7 +67,7 @@ class PostsController extends Controller
 
         $request->session()->flash('flash_message', 'Yeah you changed the status of your post');
 
-        return redirect('profile');
+        return redirect('/p/profile');
     }
 
     public function update(Request $request , Post $post)
@@ -85,7 +86,7 @@ class PostsController extends Controller
 
         $request->session()->flash('flash_message', 'Yeah your post is updated');
 
-        return redirect('profile');
+        return redirect('/p/profile');
     }
 
     public function store(Request $request)
@@ -111,7 +112,7 @@ class PostsController extends Controller
         $request->session()->flash('flash_message', 'Yeah it worked!');
 
         // Redirect to the homepage
-        return redirect('profile');
+        return redirect('/p/profile');
     }
 
     public function delete(Request $request,Post $post){
@@ -120,6 +121,22 @@ class PostsController extends Controller
 
         $request->session()->flash('flash_message', 'Yeah your post is deleted');
 
-        return redirect('profile');
+        return redirect('/p/profile');
+    }
+
+    public function postAdmin()
+    {
+        $posts = Post::all();
+
+        return view('/admin/dashboard', compact('posts'));
+    }
+
+    public function adminDelete(Request $request, Post $post)
+    {
+        $post->delete();
+
+         $request->session()->flash('flash_message', 'Deleted');
+
+        return back();
     }
 }

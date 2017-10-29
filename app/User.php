@@ -31,6 +31,15 @@ class User extends Authenticatable
         return $post->liked->contains('user_id', $this->id);
     }
 
+    public function is_admin()
+    {
+        if($this->admin){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     /**
      * The attributes that are mass assignable.
      *

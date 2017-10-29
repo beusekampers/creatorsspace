@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('admin')->default(0);
             $table->string('password');
             $table->text('personal_text', 250);
             $table->string('profile_picture')->default('default.jpg');

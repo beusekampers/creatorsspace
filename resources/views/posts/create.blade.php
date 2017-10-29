@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="album text-muted">
+    <div class="wrapper create z-depth-3 clearfix">
         <h2>
             Create a post
         </h2>
@@ -22,7 +22,7 @@
 
             <div class="form-group">
                 <label for="category_id">Category</label>
-                <select name="category_id" id="category_id">
+                <select name="category_id" id="category_id" required>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
