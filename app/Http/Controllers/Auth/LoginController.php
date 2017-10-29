@@ -33,11 +33,13 @@ class LoginController extends Controller
             $user = User::where('email', $request->email)->first();
 
             if($user->is_admin()){
-                return redirect()->route('dashboard');
+                return redirect('/admin/dashboard');
             }else{
                 return redirect()->route('profile');
             }
         }
+
+        return back();
     }
 
     /**
